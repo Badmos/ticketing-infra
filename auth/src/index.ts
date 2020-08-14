@@ -5,7 +5,7 @@ import { app } from "./app";
 import { DatabaseConnectionError } from "@coboard/common";
 
 const start = async () => {
-	console.log("Starting server >>>>>>>>>>>>>");
+	console.log("Starting server >>");
 	//check if environment variable is defined in pod
 	if (!process.env.JWT_KEY) {
 		throw new Error("JWT key has not been set as an environment variable");
