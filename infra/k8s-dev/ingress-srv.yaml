@@ -26,6 +26,7 @@ spec:
             backend:
               serviceName: orders-srv
               servicePort: 3000
+          # Uncomment block when there is a client to consume the API
           # - path: /?(.*)
           #   backend:
           #     serviceName: client-srv
