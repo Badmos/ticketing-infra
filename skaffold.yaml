@@ -7,12 +7,12 @@ deploy:
       - ./infra/k8s-dev/*
   statusCheckDeadlineSeconds: 30
 build:
-  googleCloudBuild:
-    projectId: ticketing-dev-279501
-  # local:
-  #   push: false
+  # googleCloudBuild:
+  #   projectId: ticketing-dev-279501
+  local:
+    push: false
   artifacts:
-    - image: us.gcr.io/ticketing-dev-279501/auth
+    - image: badmos/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -20,7 +20,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-279501/tickets
+    - image: badmos/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -28,7 +28,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-279501/orders
+    - image: badmos/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -36,7 +36,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-279501/expiration
+    - image: badmos/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -44,7 +44,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-279501/payments
+    - image: badmos/payments
       context: payments
       docker:
         dockerfile: Dockerfile
@@ -52,7 +52,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/ticketing-dev-279501/client
+    - image: badmos/client
       context: client
       docker:
         dockerfile: Dockerfile
