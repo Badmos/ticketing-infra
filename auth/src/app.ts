@@ -18,7 +18,7 @@ app.use(
   cookieSession({
     signed: false,
     name: "jwt",
-    secure: process.env.NODE_ENV !== "test",
+    secure: false //process.env.NODE_ENV !== "test",
   })
 );
 
