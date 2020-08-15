@@ -2,6 +2,7 @@ import { natsWrapper } from "./nats-wrapper";
 import { OrderCreatedListener } from "./events/listeners/order-created-listener";
 
 const start = async () => {
+	console.log("Starting server >>>>>");
 	//check if environment variable is defined in pod
 	if (!process.env.NATS_CLUSTER_ID) {
 		throw new Error("NATS_CLUSTER_ID has not been set as an environment variable");
